@@ -1,1 +1,2 @@
-![text ALT](https://github.com/Fyleau/tp-r504/actions/workflows/pytest.yml/badge.svg)
+[![Tests unitaires](https://github.com/Fyleau/tp-r504/actions/workflows/pytest.yml/badge.svg)](https://github.com/Fyleau/tp-r504/actions)
+
