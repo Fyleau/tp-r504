@@ -21,6 +21,8 @@ def test_3():
     assert f.puissance(0, 5) == 0
 
     with pytest.raises(Exception):
+        f.puissance(0, 0)
+    with pytest.raises(Exception):
         f.puissance(0, -1)
     with pytest.raises(Exception):
         f.puissance(0, -2)
