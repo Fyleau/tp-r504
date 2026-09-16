@@ -10,20 +10,20 @@ jobs:
         python-version: ["3.8", "3.10"]
     steps:
       - uses: actions/checkout@v3
-      
-      - name: Set up Python for Demo
+
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "${{ matrix.python-version }}"
-          
-      - name: Afficher la version de Python (Q7.3)
+          python-version: ${{ matrix.python-version }}
+
+      - name: Afficher version Python
         run: python --version
-          
-      - name: Afficher le nom de la branche (Q7.1)
-        run: echo "Nom de la branche : ${{ github.ref }}"
-        
-      - name: Afficher l'OS du runner (Q7.1)
-        run: echo "OS de la VM : ${{ runner.os }}"
+
+      - name: Afficher nom de la branche
+        run: echo "Branche - ${{ github.ref }}"
+
+      - name: Afficher OS runner
+        run: echo "OS - ${{ runner.os }}"
 
       - name: Run tests
         run: pytest TP1/test.py
