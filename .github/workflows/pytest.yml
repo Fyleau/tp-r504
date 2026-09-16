@@ -5,18 +5,24 @@ on: [push]
 jobs:
   test1:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.10"]
     steps:
       - uses: actions/checkout@v3
       
       - name: Set up Python for Demo
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
-
-      - name: Afficher le nom de la branche
+          python-version: ${{ matrix.python-version }}
+          
+      - name: Afficher la version de Python (Q7.3)
+        run: python --version
+          
+      - name: Afficher le nom de la branche (Q7.1)
         run: echo "Nom de la branche : ${{ github.ref }}"
         
-      - name: Afficher l'OS du runner
+      - name: Afficher l'OS du runner (Q7.1)
         run: echo "OS de la VM : ${{ runner.os }}"
 
       - name: Run tests
