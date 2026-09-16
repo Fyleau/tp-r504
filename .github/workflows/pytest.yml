@@ -7,13 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
+      
       - name: Set up Python for Demo
         uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-      - name: Install pytest
-        run: pip install pytest
+      - name: Afficher le nom de la branche
+        run: echo "Nom de la branche : ${{ github.ref }}"
+        
+      - name: Afficher l'OS du runner
+        run: echo "OS de la VM : ${{ runner.os }}"
 
       - name: Run tests
         run: pytest TP1/test.py
-
